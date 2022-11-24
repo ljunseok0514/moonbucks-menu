@@ -15,9 +15,14 @@ function App() {
     e.preventDefault();
   });
   //메뉴의 이름을 입력받는건
+
   $("#espresso-menu-name").addEventListener("keypress", (e) => {
-    if ($("espresso-menu-name").value === "") {
+    if (e.key !== "Enter") {
+      return;
+    }
+    if ($("#espresso-menu-name").value === "") {
       alert("값을 입력해주세요");
+      return;
     }
     if (e.key === "Enter") {
       const espressMunuName = $("#espresso-menu-name").value;
